@@ -3,14 +3,15 @@ import React, { PureComponent } from 'react'
 export default class App extends PureComponent {
   constructor(props) {
     super(props)
-    this.state = { asyncComponent: null }
-    this.loadChuck.bind(this);
-    this.loadCSSChuck.bind(this);
+    this.state = { asyncComponent: null };
+    this.loadChuck = this.loadChuck.bind(this);
+    this.loadCSSChuck = this.loadCSSChuck.bind(this);
   }
   render() {
     if (this.state.asyncComponent != null) {
+      console.log(this.state.asyncComponent.default, App);
       return (
-        <this.state.asyncComponent />
+        <this.state.asyncComponent.default />
       )
     } else {
       return (
