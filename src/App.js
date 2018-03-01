@@ -9,7 +9,6 @@ export default class App extends PureComponent {
   }
   render() {
     if (this.state.asyncComponent != null) {
-      console.log(this.state.asyncComponent.default, App);
       return (
         <this.state.asyncComponent.default />
       )
